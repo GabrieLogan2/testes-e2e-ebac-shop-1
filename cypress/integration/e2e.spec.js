@@ -34,8 +34,12 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.woocommerce-message').should('contain', quantidade + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
 
         cy.visit('checkout')
+        var nome = faker.internet.userName()
+        var sobrenome = faker.internet.userName()
+        var email = faker.internet.email()
+        var senha = faker.internet.password()
 
-        // Travada 
+        cy.Endereço(nome, sobrenome, 'Rua teste', 'Casa', 'Cidade teste', 'São paulo', '58083-003', '(93) 3227-7144', email, senha )
     });
 })
 
